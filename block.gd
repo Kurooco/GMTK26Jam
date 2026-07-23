@@ -30,12 +30,11 @@ func _ready() -> void:
 	collision.position = rail.position + rail.curve.get_closest_point(collision.position)
 
 func enable_movement(b:bool) -> void:
-	if(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and !moving): return
 	movable = b
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(movable || moving):
+	if(movable and Input.is_action_just_pressed("select") or moving):
 		if(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 			moving = true
 			var desired_position = get_local_mouse_position()- pos_diff
@@ -43,5 +42,6 @@ func _process(delta: float) -> void:
 			collision.position = rail.curve.get_closest_point(desired_position)
 		else:
 			moving = false
-			pos_diff = get_local_mouse_position() - collision.position
+	if(!moving):
+		pos_diff = get_local_mouse_position() - collision.position
 	modulate = Color.RED if movable else Color.WHITE
