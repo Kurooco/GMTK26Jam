@@ -7,6 +7,7 @@ var reset = false
 func _ready() -> void:
 	origin_position = global_position
 	can_sleep = false
+	gravity_scale = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

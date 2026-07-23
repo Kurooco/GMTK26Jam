@@ -44,4 +44,4 @@ func _process(delta: float) -> void:
 			moving = false
 	if(!moving):
 		pos_diff = get_local_mouse_position() - collision.position
-	modulate = Color.RED if movable else Color.WHITE
+	modulate = Color.RED if movable || moving else Color.WHITE
