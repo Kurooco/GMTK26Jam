@@ -1,3 +1,59 @@
 [gd_scene format=3 uid="uid://dn4sn1fjnew34"]
 
+[ext_resource type="Script" uid="uid://b0p4wro4rl36s" path="res://test_level.gd" id="1_f7g2b"]
+[ext_resource type="PackedScene" uid="uid://ggoo0op8gb0g" path="res://player.tscn" id="1_gojnm"]
+[ext_resource type="PackedScene" uid="uid://c6svs40bbiwxy" path="res://rail_mover.tscn" id="2_1c2mv"]
+
+[sub_resource type="Curve2D" id="Curve2D_f7g2b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 352, 376, 0, 0, 0, 0, 568, 576, 0, 0, 0, 0, 696, 288, 0, 0, 0, 0, 432, 256, 0, 0, 0, 0, 352, 384, 0, 0, 0, 0, 352, 376)
+}
+point_count = 6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbbe2"]
+size = Vector2(122, 103)
+
+[sub_resource type="Curve2D" id="Curve2D_4ptq8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 240, 160, 0, 0, 0, 0, 864, 144)
+}
+point_count = 2
+
 [node name="TestLevel" type="Node2D" unique_id=1008795775]
+script = ExtResource("1_f7g2b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1781931898]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2076057015]
+position = Vector2(147, 0)
+polygon = PackedVector2Array(32, 616, 808, 616, 808, 32, 32, 32, 32, 584, 64, 584, 64, 64, 776, 64, 776, 584, 32, 584)
+
+[node name="Player" parent="." unique_id=2089645925 instance=ExtResource("1_gojnm")]
+position = Vector2(276.57962, 113.92682)
+
+[node name="RailMover" parent="." unique_id=748919504 node_paths=PackedStringArray("collision") instance=ExtResource("2_1c2mv")]
+collision = NodePath("StaticBody2D")
+
+[node name="Path2D" type="Path2D" parent="RailMover" unique_id=173615954]
+curve = SubResource("Curve2D_f7g2b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RailMover" unique_id=866218585]
+position = Vector2(688, 264)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RailMover/StaticBody2D" unique_id=708112980]
+shape = SubResource("RectangleShape2D_pbbe2")
+
+[node name="RailMover2" parent="." unique_id=1242561103 node_paths=PackedStringArray("collision") instance=ExtResource("2_1c2mv")]
+collision = NodePath("StaticBody2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RailMover2" unique_id=178807292]
+position = Vector2(712, 104)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="RailMover2/StaticBody2D" unique_id=1618781352]
+position = Vector2(0, 18)
+polygon = PackedVector2Array(-112, 0, 80, -80, 80, 0)
+
+[node name="Path2D" type="Path2D" parent="RailMover2" unique_id=1044365518]
+curve = SubResource("Curve2D_4ptq8")
