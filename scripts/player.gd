@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 			gravity_scale = 1
 			reset = false
 	$Sprite2D.rotation += delta*linear_velocity.x*.1
-	$CPUParticles2D.emitting = colliding && linear_velocity.length() > 50
+	$CPUParticles2D.emitting = colliding && abs(linear_velocity.x) > 50
 
 
 func _integrate_forces(state):

@@ -48,6 +48,7 @@ autoplay = "default"
 frame_progress = 0.7367878
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1560288237]
+position = Vector2(0, 15)
 emitting = false
 amount = 16
 lifetime = 0.5
