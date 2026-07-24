@@ -33,11 +33,12 @@ func enable_movement(b:bool) -> void:
 	movable = b
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if(GameManager.current_mode == GameManager.PlayMode.ROLLING):
 		modulate = Color.WHITE
 		return
 	if(movable and Input.is_action_just_pressed("select") or moving):
+		get_viewport().set_input_as_handled()
 		if(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 			moving = true
 			var desired_position = get_local_mouse_position()- pos_diff
