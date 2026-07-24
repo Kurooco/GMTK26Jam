@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8vmqwoxedmls"]
 
-[ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/level_template.tscn" id="1_jwv3a"]
+[ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/levels/level_template.tscn" id="1_jwv3a"]
 [ext_resource type="PackedScene" uid="uid://c6svs40bbiwxy" path="res://scenes/rail_mover.tscn" id="2_dopym"]
 
 [sub_resource type="Curve2D" id="Curve2D_ootpb"]
@@ -15,7 +15,7 @@ point_count = 2
 polygon = PackedVector2Array(32, 616, 808, 616, 808, 32, 32, 32, 32, 584, 64, 584, 64, 64, 776, 64, 776, 584, 685, 584, 685, 528, 661, 528, 661, 584, 64, 545, 64, 584, 32, 584)
 
 [node name="CollactableMap" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="2" unique_id=962208389]
-tile_map_data = PackedByteArray(0, 0, 28, 0, 14, 0, 4, 0, 0, 0, 0, 0, 2, 0)
+tile_map_data = PackedByteArray(0, 0, 23, 0, 11, 0, 4, 0, 0, 0, 0, 0, 2, 0)
 
 [node name="RailMover" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="4" unique_id=748919504 instance=ExtResource("2_dopym")]
 

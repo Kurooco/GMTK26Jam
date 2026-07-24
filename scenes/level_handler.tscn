@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://hyi2h3qn768p"]
 
 [ext_resource type="Script" uid="uid://b3hhjomlhmxdq" path="res://scripts/level_handler.gd" id="1_lqfj4"]
-[ext_resource type="PackedScene" uid="uid://c8vmqwoxedmls" path="res://scenes/level1.tscn" id="2_lsvq1"]
-[ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/level_template.tscn" id="3_lsvq1"]
+[ext_resource type="PackedScene" uid="uid://cnbao8n7bu3eh" path="res://scenes/levels/level2.tscn" id="2_c7bce"]
+[ext_resource type="PackedScene" uid="uid://c8vmqwoxedmls" path="res://scenes/levels/level1.tscn" id="2_lsvq1"]
+[ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/levels/level_template.tscn" id="3_lsvq1"]
 
 [node name="LevelHandler" type="Node" unique_id=1839362579]
 script = ExtResource("1_lqfj4")
-levels = Array[PackedScene]([ExtResource("2_lsvq1"), ExtResource("3_lsvq1")])
+levels = Array[PackedScene]([ExtResource("2_c7bce"), ExtResource("2_lsvq1"), ExtResource("3_lsvq1")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=240334699]
 layer = 2

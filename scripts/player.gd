@@ -11,7 +11,6 @@ func _ready() -> void:
 	can_sleep = false
 	gravity_scale = 0
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	modulate = Color.BLUE if GameManager.current_mode == 0 else Color.WHITE

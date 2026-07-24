@@ -25,7 +25,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position = origin_position + Vector2(0, sin(Time.get_ticks_msec()/500.0 + global_position.x)*5)
+	$Sprite2D.global_position = origin_position + Vector2(0, sin(Time.get_ticks_msec()/500.0 + global_position.x)*2.5)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

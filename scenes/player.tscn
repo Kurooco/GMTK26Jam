@@ -62,12 +62,12 @@ color = Color(0, 0, 0, 0.6862745)
 [node name="BigHit" type="CPUParticles2D" parent="." unique_id=885422086]
 emitting = false
 amount = 32
-lifetime = 0.3
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 43.86
+initial_velocity_min = 210.0
 initial_velocity_max = 210.52
 scale_amount_min = 10.0
 scale_amount_max = 30.0
