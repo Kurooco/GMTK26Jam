@@ -6,6 +6,7 @@ var current_level = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.level_handler = self
 	set_level(0)
 
 func set_level(ind:int):
@@ -17,3 +18,7 @@ func set_level(ind:int):
 	current_level = levels[ind].instantiate()
 	
 	add_child(current_level)
+
+func next_level():
+	GameManager.current_mode = GameManager.PlayMode.PLACING
+	set_level(current_level_ind+1)

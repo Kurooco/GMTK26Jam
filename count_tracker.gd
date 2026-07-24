@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var counts : Dictionary[Collectable.VegType, int]
+@onready var item_list: ItemList = $VBoxContainer/ItemList
 var count_copy
 var is_satisfied
 
@@ -14,12 +15,13 @@ func _ready() -> void:
 	update_list()
 
 func update_list():
-	$ItemList.clear()
+	item_list.clear()
 	for veg in counts.keys():
 		var display = str(counts[veg]) if counts[veg] >= 0 else "X"
-		$ItemList.add_item(display, Collectable.sprites[veg], false)
+		item_list.add_item(display, Collectable.sprites[veg], false)
 
 func subtract(type:int) -> void:
+	if(!type in counts.keys()): return
 	counts[type] -= 1
 	if(check_satisfaction()):
 		is_satisfied = true
@@ -30,6 +32,9 @@ func subtract(type:int) -> void:
 
 func reset():
 	counts = count_copy.duplicate()
+	if(is_satisfied):
+		is_satisfied = false
+		dissatisfied.emit()
 	update_list()
 
 func check_satisfaction():

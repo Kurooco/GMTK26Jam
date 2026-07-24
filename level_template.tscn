@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dtfq2i2bjgtvo"]
+
+[ext_resource type="PackedScene" uid="uid://ggoo0op8gb0g" path="res://player.tscn" id="1_7hsss"]
+[ext_resource type="Script" uid="uid://b0p4wro4rl36s" path="res://test_level.gd" id="1_626v6"]
+[ext_resource type="PackedScene" uid="uid://bcs6154cww7fy" path="res://collactable_map.tscn" id="2_x24lp"]
+[ext_resource type="PackedScene" uid="uid://u2ojjlm31x3d" path="res://door.tscn" id="3_smkg2"]
+[ext_resource type="PackedScene" uid="uid://c6sd4epdt4ml2" path="res://count_tracker.tscn" id="4_smkg2"]
+[ext_resource type="Shader" uid="uid://40hgqw5ma5s0" path="res://blocks.gdshader" id="6_0eplr"]
+[ext_resource type="Texture2D" uid="uid://cxogxpl31iq6b" path="res://art/blocks.png" id="7_gll4f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbbe2"]
+shader = ExtResource("6_0eplr")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1933097582]
+
+[node name="LevelTemplate" type="Node2D" parent="." unique_id=1106842954]
+position = Vector2(-104, 0)
+script = ExtResource("1_626v6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelTemplate" unique_id=1078983259]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTemplate/StaticBody2D" unique_id=1619036250]
+position = Vector2(147, 0)
+polygon = PackedVector2Array(32, 616, 808, 616, 808, 32, 32, 32, 32, 584, 64, 584, 64, 64, 776, 64, 776, 584, 688, 584, 64, 545, 64, 584, 32, 584)
+
+[node name="Player" parent="LevelTemplate" unique_id=2089645925 instance=ExtResource("1_7hsss")]
+position = Vector2(276.57962, 113.92682)
+
+[node name="CollactableMap" parent="LevelTemplate" unique_id=962208389 instance=ExtResource("2_x24lp")]
+tile_map_data = PackedByteArray()
+
+[node name="Door" parent="LevelTemplate" unique_id=16439755 instance=ExtResource("3_smkg2")]
+z_index = -1
+position = Vector2(879.99994, 549.99994)
+
+[node name="CountTracker" parent="." unique_id=1943048595 instance=ExtResource("4_smkg2")]
+position = Vector2(900.3978, 58.139374)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1524114697]
+position = Vector2(572.8133, 323.19537)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1980251743]
+z_index = -5
+offset_left = -10.0
+offset_right = 1192.0
+offset_bottom = 660.0
+mouse_filter = 2
+color = Color(0.6267971, 0.11095887, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1846365684]
+modulate = Color(1, 1, 1, 0.42745098)
+self_modulate = Color(0, 0, 0, 0.3372549)
+z_index = -5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pbbe2")
+offset_left = -72.0
+offset_top = -38.0
+offset_right = 2598.0
+offset_bottom = 1494.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("7_gll4f")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2032767723]
+z_index = -5
+offset_left = 91.0
+offset_top = 54.0
+offset_right = 834.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0.4121936, 0.058721334, 0, 1)

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6sd4epdt4ml2" path="res://count_tracker.tscn" id="5_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://nbkjfibtqev2" path="res://collectable.tscn" id="5_sb12i"]
 [ext_resource type="PackedScene" uid="uid://bcs6154cww7fy" path="res://collactable_map.tscn" id="6_gbhdq"]
+[ext_resource type="TileSet" uid="uid://ct6jhrgsxtvl8" path="res://resources/items.tres" id="7_lnbra"]
 [ext_resource type="PackedScene" uid="uid://u2ojjlm31x3d" path="res://door.tscn" id="7_y646j"]
 
 [sub_resource type="Curve2D" id="Curve2D_f7g2b"]
@@ -71,6 +72,7 @@ counts = Dictionary[int, int]({
 
 [node name="CollactableMap" parent="." unique_id=962208389 instance=ExtResource("6_gbhdq")]
 tile_map_data = PackedByteArray(0, 0, 13, 0, 13, 0, 4, 0, 0, 0, 0, 0, 1, 0, 16, 0, 7, 0, 4, 0, 0, 0, 0, 0, 1, 0, 13, 0, 17, 0, 4, 0, 0, 0, 0, 0, 1, 0)
+tile_set = ExtResource("7_lnbra")
 
 [node name="Door" parent="." unique_id=16439755 instance=ExtResource("7_y646j")]
 position = Vector2(879.99994, 549.99994)

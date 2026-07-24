@@ -17,5 +17,5 @@ func close():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body is Player and frame == 1):
-		pass
+		GameManager.level_handler.next_level()
 		
