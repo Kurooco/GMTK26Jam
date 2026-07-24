@@ -1,5 +1,6 @@
 extends AnimatedSprite2D
 
+@onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 var t : Tween
 
 # Called when the node enters the scene tree for the first time.
@@ -18,4 +19,5 @@ func close():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body is Player and frame == 1):
 		GameManager.level_handler.next_level()
+		collision_shape.set_deferred("disabled", true)
 		

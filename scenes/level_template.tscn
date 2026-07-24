@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dtfq2i2bjgtvo"]
 
-[ext_resource type="PackedScene" uid="uid://ggoo0op8gb0g" path="res://player.tscn" id="1_7hsss"]
-[ext_resource type="Script" uid="uid://b0p4wro4rl36s" path="res://test_level.gd" id="1_626v6"]
-[ext_resource type="PackedScene" uid="uid://bcs6154cww7fy" path="res://collactable_map.tscn" id="2_x24lp"]
-[ext_resource type="PackedScene" uid="uid://u2ojjlm31x3d" path="res://door.tscn" id="3_smkg2"]
-[ext_resource type="PackedScene" uid="uid://c6sd4epdt4ml2" path="res://count_tracker.tscn" id="4_smkg2"]
-[ext_resource type="Shader" uid="uid://40hgqw5ma5s0" path="res://blocks.gdshader" id="6_0eplr"]
+[ext_resource type="PackedScene" uid="uid://ggoo0op8gb0g" path="res://scenes/player.tscn" id="1_7hsss"]
+[ext_resource type="Script" uid="uid://b0p4wro4rl36s" path="res://scripts/test_level.gd" id="1_626v6"]
+[ext_resource type="PackedScene" uid="uid://bcs6154cww7fy" path="res://scenes/collactable_map.tscn" id="2_x24lp"]
+[ext_resource type="PackedScene" uid="uid://u2ojjlm31x3d" path="res://scenes/door.tscn" id="3_smkg2"]
+[ext_resource type="PackedScene" uid="uid://c6sd4epdt4ml2" path="res://scenes/count_tracker.tscn" id="4_smkg2"]
+[ext_resource type="Shader" uid="uid://40hgqw5ma5s0" path="res://resources/blocks.gdshader" id="6_0eplr"]
 [ext_resource type="Texture2D" uid="uid://cxogxpl31iq6b" path="res://art/blocks.png" id="7_gll4f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pbbe2"]
@@ -27,7 +27,6 @@ polygon = PackedVector2Array(32, 616, 808, 616, 808, 32, 32, 32, 32, 584, 64, 58
 position = Vector2(276.57962, 113.92682)
 
 [node name="CollactableMap" parent="LevelTemplate" unique_id=962208389 instance=ExtResource("2_x24lp")]
-tile_map_data = PackedByteArray()
 
 [node name="Door" parent="LevelTemplate" unique_id=16439755 instance=ExtResource("3_smkg2")]
 z_index = -1

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6sd4epdt4ml2"]
 
-[ext_resource type="Script" uid="uid://dvpwq566m5a62" path="res://count_tracker.gd" id="1_hb18e"]
+[ext_resource type="Script" uid="uid://dvpwq566m5a62" path="res://scripts/count_tracker.gd" id="1_hb18e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_626v6"]
 bg_color = Color(0, 0, 0, 0.43529412)
@@ -27,4 +27,5 @@ size_flags_vertical = 3
 focus_mode = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_626v6")
 allow_search = false
+auto_height = true
 fixed_icon_size = Vector2i(50, 50)

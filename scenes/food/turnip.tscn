@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cyhdgays7p0aq"]
+
+[ext_resource type="PackedScene" uid="uid://nbkjfibtqev2" path="res://scenes/collectable.tscn" id="1_2hysr"]
+[ext_resource type="Texture2D" uid="uid://clqjry21r2su1" path="res://art/turnip.png" id="2_82s6q"]
+
+[node name="Collectable" unique_id=1206059110 instance=ExtResource("1_2hysr")]
+type = 1
+
+[node name="Sprite2D" parent="." index="1" unique_id=389462543]
+texture = ExtResource("2_82s6q")

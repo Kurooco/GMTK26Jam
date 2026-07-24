@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nbkjfibtqev2"]
 
-[ext_resource type="Script" uid="uid://c16xsit2btb7b" path="res://collectable.gd" id="1_3dk6v"]
+[ext_resource type="Script" uid="uid://c16xsit2btb7b" path="res://scripts/collectable.gd" id="1_3dk6v"]
 [ext_resource type="Texture2D" uid="uid://cvqga4jyuf0ko" path="res://art/carrot.png" id="2_un20x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dk6v"]
