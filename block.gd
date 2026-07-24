@@ -34,6 +34,9 @@ func enable_movement(b:bool) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if(GameManager.current_mode == GameManager.PlayMode.ROLLING):
+		modulate = Color.WHITE
+		return
 	if(movable and Input.is_action_just_pressed("select") or moving):
 		if(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 			moving = true

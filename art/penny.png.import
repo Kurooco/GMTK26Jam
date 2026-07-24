@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bikq5cqrnd0js"
-path="res://.godot/imported/rail.png-9dfe5293ba9f454f951c6969f7f851f5.ctex"
+uid="uid://1gccqvdrydg7"
+path="res://.godot/imported/penny.png-b413ba5ba7fca5d20078fda4f12b06a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rail.png"
-dest_files=["res://.godot/imported/rail.png-9dfe5293ba9f454f951c6969f7f851f5.ctex"]
+source_file="res://art/penny.png"
+dest_files=["res://.godot/imported/penny.png-b413ba5ba7fca5d20078fda4f12b06a1.ctex"]
 
 [params]
 

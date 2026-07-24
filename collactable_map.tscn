@@ -1,0 +1,16 @@
+[gd_scene format=4 uid="uid://bcs6154cww7fy"]
+
+[ext_resource type="PackedScene" uid="uid://nbkjfibtqev2" path="res://collectable.tscn" id="1_hg3p4"]
+[ext_resource type="Script" uid="uid://c852s7tjuniga" path="res://collactable_map.gd" id="2_87nlu"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_87nlu"]
+scenes/1/scene = ExtResource("1_hg3p4")
+
+[sub_resource type="TileSet" id="TileSet_pbbe2"]
+tile_size = Vector2i(20, 20)
+sources/0 = SubResource("TileSetScenesCollectionSource_87nlu")
+
+[node name="CollactableMap" type="TileMapLayer" unique_id=962208389]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAQACAAAAAAAAAAAAAQADAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAHAAEAAAAAAAAAAQAHAAIAAAAAAAAAAQAHAAMAAAAAAAAAAQAHAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAFAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQADAAQAAAAAAAAAAQACAAQAAAAAAAAAAQACAAMAAAAAAAAAAQACAAIAAAAAAAAAAQACAAEAAAAAAAAAAQADAAEAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_pbbe2")
+script = ExtResource("2_87nlu")

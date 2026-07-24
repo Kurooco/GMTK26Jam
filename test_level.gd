@@ -11,7 +11,7 @@ func _ready() -> void:
 		if(b in node_textures.keys()):
 			p.texture = node_textures[b]
 		else:
-			p.texture = load("res://dirt.png")
+			p.texture = load("res://art/dirt.png")
 		p.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 		p.position = get_collision(b).position
 		b.add_child(p)

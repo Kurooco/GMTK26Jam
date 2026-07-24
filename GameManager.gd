@@ -6,3 +6,5 @@ enum PlayMode {
 }
 
 var current_mode : PlayMode = 0
+
+signal player_reset

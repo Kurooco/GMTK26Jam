@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1gccqvdrydg7"
-path="res://.godot/imported/penny.png-5ad6a0516edb51f31418627c59080fd3.ctex"
+uid="uid://clqjry21r2su1"
+path="res://.godot/imported/turnip.png-98a4f3d5dc39d5d2216894ca92930e7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://penny.png"
-dest_files=["res://.godot/imported/penny.png-5ad6a0516edb51f31418627c59080fd3.ctex"]
+source_file="res://art/turnip.png"
+dest_files=["res://.godot/imported/turnip.png-98a4f3d5dc39d5d2216894ca92930e7a.ctex"]
 
 [params]
 

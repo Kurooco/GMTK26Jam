@@ -1,22 +1,78 @@
 [gd_scene format=3 uid="uid://ggoo0op8gb0g"]
 
 [ext_resource type="Script" uid="uid://42x08j6jn7ex" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://1gccqvdrydg7" path="res://penny.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://bvmpacibybbsb" path="res://art/player1.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://crke0qv6c77qa" path="res://art/player2.png" id="3_hqtel"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1c2mv"]
+friction = 0.0
 rough = true
 bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbbe2"]
-radius = 24.0
+radius = 16.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbbe2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i3pqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hqtel")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_pbbe2"]
+offsets = PackedFloat32Array(0, 0.84126985, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0952381, 0.0952381, 0.0952381, 0.9047619, 1, 1, 1, 0)
 
 [node name="Player" type="RigidBody2D" unique_id=2089645925]
 physics_material_override = SubResource("PhysicsMaterial_1c2mv")
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1400827512]
 shape = SubResource("CircleShape2D_pbbe2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1388091004]
-scale = Vector2(0.5249999, 0.5249999)
-texture = ExtResource("2_onrkg")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=856526605]
+z_index = 1
+position = Vector2(1.9073486e-06, -1.9073486e-06)
+scale = Vector2(0.17125, 0.17125)
+sprite_frames = SubResource("SpriteFrames_pbbe2")
+autoplay = "default"
+frame_progress = 0.88826597
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1560288237]
+emitting = false
+amount = 16
+lifetime = 0.5
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+scale_amount_min = 5.0
+scale_amount_max = 20.0
+color = Color(0, 0, 0, 0.6862745)
+
+[node name="BigHit" type="CPUParticles2D" parent="." unique_id=885422086]
+emitting = false
+amount = 32
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 43.86
+initial_velocity_max = 210.52
+scale_amount_min = 10.0
+scale_amount_max = 30.0
+color = Color(0, 0, 0, 0.8627451)
+color_ramp = SubResource("Gradient_pbbe2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

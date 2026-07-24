@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c6svs40bbiwxy"]
 
 [ext_resource type="Script" uid="uid://bonav1lsig7aa" path="res://block.gd" id="1_n77po"]
-[ext_resource type="Texture2D" uid="uid://dk63fa654upde" path="res://icon.svg" id="2_83scx"]
-[ext_resource type="Texture2D" uid="uid://bikq5cqrnd0js" path="res://rail.png" id="2_nuqv1"]
+[ext_resource type="Texture2D" uid="uid://dk63fa654upde" path="res://art/icon.svg" id="2_83scx"]
+[ext_resource type="Texture2D" uid="uid://bikq5cqrnd0js" path="res://art/rail.png" id="2_nuqv1"]
 
 [node name="RailMover" type="Node2D" unique_id=748919504]
 script = ExtResource("1_n77po")
