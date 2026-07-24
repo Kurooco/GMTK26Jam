@@ -12,19 +12,28 @@ static var sprites = [
 ]
 
 @export var type : VegType
+@onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
+
 var origin_position : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	origin_position = global_position
-	$Sprite2D.frame = type
+	$Sprite2D.texture = sprites[type]
+	GameManager.player_reset.connect(reset)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position = origin_position + Vector2(0, sin(Time.get_ticks_msec()/500.0)*10)
+	global_position = origin_position + Vector2(0, sin(Time.get_ticks_msec()/500.0 + global_position.x)*5)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body is Player):
-		queue_free()
+		get_tree().get_first_node_in_group("count_tracker").subtract(type)
+		hide()
+		collision_shape.set_deferred("disabled", true)
+		
+func reset():
+	show()
+	collision_shape.set_deferred("disabled", false)

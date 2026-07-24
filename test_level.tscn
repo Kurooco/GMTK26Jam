@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://dn4sn1fjnew34"]
+[gd_scene format=4 uid="uid://dn4sn1fjnew34"]
 
 [ext_resource type="Script" uid="uid://b0p4wro4rl36s" path="res://test_level.gd" id="1_f7g2b"]
 [ext_resource type="PackedScene" uid="uid://ggoo0op8gb0g" path="res://player.tscn" id="1_gojnm"]
 [ext_resource type="PackedScene" uid="uid://c6svs40bbiwxy" path="res://rail_mover.tscn" id="2_1c2mv"]
 [ext_resource type="PackedScene" uid="uid://c6sd4epdt4ml2" path="res://count_tracker.tscn" id="5_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://nbkjfibtqev2" path="res://collectable.tscn" id="5_sb12i"]
+[ext_resource type="PackedScene" uid="uid://bcs6154cww7fy" path="res://collactable_map.tscn" id="6_gbhdq"]
 
 [sub_resource type="Curve2D" id="Curve2D_f7g2b"]
 _data = {
@@ -67,3 +68,6 @@ counts = Dictionary[int, int]({
 0: 5,
 1: 2
 })
+
+[node name="CollactableMap" parent="." unique_id=962208389 instance=ExtResource("6_gbhdq")]
+tile_map_data = PackedByteArray("AAANAA0ABAAAAAAAAQAOAA0ABAAAAAAAAQAPAA0ABAAAAAAAAQAQAA0ABAAAAAAAAQAQAA4ABAAAAAAAAQAQAA8ABAAAAAAAAQAQABAABAAAAAAAAQAPABAABAAAAAAAAQAPABEABAAAAAAAAQAPABIABAAAAAAAAQAQABIABAAAAAAAAQAQABMABAAAAAAAAQAQABQABAAAAAAAAQARABQABAAAAAAAAQASABQABAAAAAAAAQATABUABAAAAAAAAQAUABUABAAAAAAAAQAVABUABAAAAAAAAQAWABUABAAAAAAAAQAXABUABAAAAAAAAQAYABUABAAAAAAAAQAZABUABAAAAAAAAQAaABUABAAAAAAAAQAbABUABAAAAAAAAQAcABUABAAAAAAAAQAdABUABAAAAAAAAQAeABUABAAAAAAAAQAVABQABAAAAAAAAQAUABQABAAAAAAAAQAUABMABAAAAAAAAQAVABMABAAAAAAAAQAWABMABAAAAAAAAQAWABQABAAAAAAAAQATABQABAAAAAAAAQATABMABAAAAAAAAQA=")

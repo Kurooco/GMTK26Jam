@@ -27,7 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="Gradient" id="Gradient_pbbe2"]
-offsets = PackedFloat32Array(0, 0.84126985, 1)
+offsets = PackedFloat32Array(0, 0.35978836, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.0952381, 0.0952381, 0.0952381, 0.9047619, 1, 1, 1, 0)
 
 [node name="Player" type="RigidBody2D" unique_id=2089645925]
@@ -45,7 +45,7 @@ position = Vector2(1.9073486e-06, -1.9073486e-06)
 scale = Vector2(0.17125, 0.17125)
 sprite_frames = SubResource("SpriteFrames_pbbe2")
 autoplay = "default"
-frame_progress = 0.88826597
+frame_progress = 0.7367878
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1560288237]
 emitting = false
@@ -62,7 +62,7 @@ color = Color(0, 0, 0, 0.6862745)
 [node name="BigHit" type="CPUParticles2D" parent="." unique_id=885422086]
 emitting = false
 amount = 32
-lifetime = 0.5
+lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
 spread = 180.0
