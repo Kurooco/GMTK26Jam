@@ -24,7 +24,7 @@ func subtract(type:int) -> void:
 	if(check_satisfaction()):
 		is_satisfied = true
 		satisfied.emit()
-	elif(!is_satisfied):
+	elif(is_satisfied):
 		dissatisfied.emit()
 	update_list()
 

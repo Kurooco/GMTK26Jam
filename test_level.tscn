@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dn4sn1fjnew34"]
+[gd_scene format=3 uid="uid://dn4sn1fjnew34"]
 
 [ext_resource type="Script" uid="uid://b0p4wro4rl36s" path="res://test_level.gd" id="1_f7g2b"]
 [ext_resource type="PackedScene" uid="uid://ggoo0op8gb0g" path="res://player.tscn" id="1_gojnm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6sd4epdt4ml2" path="res://count_tracker.tscn" id="5_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://nbkjfibtqev2" path="res://collectable.tscn" id="5_sb12i"]
 [ext_resource type="PackedScene" uid="uid://bcs6154cww7fy" path="res://collactable_map.tscn" id="6_gbhdq"]
+[ext_resource type="PackedScene" uid="uid://u2ojjlm31x3d" path="res://door.tscn" id="7_y646j"]
 
 [sub_resource type="Curve2D" id="Curve2D_f7g2b"]
 _data = {
@@ -26,7 +27,7 @@ script = ExtResource("1_f7g2b")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2076057015]
 position = Vector2(147, 0)
-polygon = PackedVector2Array(32, 616, 808, 616, 808, 32, 32, 32, 32, 584, 64, 584, 64, 64, 776, 64, 776, 584, 64, 545, 64, 584, 32, 584)
+polygon = PackedVector2Array(32, 616, 808, 616, 808, 32, 32, 32, 32, 584, 64, 584, 64, 64, 776, 64, 776, 584, 688, 584, 64, 545, 64, 584, 32, 584)
 
 [node name="Player" parent="." unique_id=2089645925 instance=ExtResource("1_gojnm")]
 position = Vector2(276.57962, 113.92682)
@@ -65,9 +66,14 @@ type = 1
 [node name="CountTracker" parent="." unique_id=1943048595 instance=ExtResource("5_gbhdq")]
 position = Vector2(974, 61)
 counts = Dictionary[int, int]({
-0: 5,
-1: 2
+0: 1
 })
 
 [node name="CollactableMap" parent="." unique_id=962208389 instance=ExtResource("6_gbhdq")]
-tile_map_data = PackedByteArray("AAANAA0ABAAAAAAAAQAOAA0ABAAAAAAAAQAPAA0ABAAAAAAAAQAQAA0ABAAAAAAAAQAQAA4ABAAAAAAAAQAQAA8ABAAAAAAAAQAQABAABAAAAAAAAQAPABAABAAAAAAAAQAPABEABAAAAAAAAQAPABIABAAAAAAAAQAQABIABAAAAAAAAQAQABMABAAAAAAAAQAQABQABAAAAAAAAQARABQABAAAAAAAAQASABQABAAAAAAAAQATABUABAAAAAAAAQAUABUABAAAAAAAAQAVABUABAAAAAAAAQAWABUABAAAAAAAAQAXABUABAAAAAAAAQAYABUABAAAAAAAAQAZABUABAAAAAAAAQAaABUABAAAAAAAAQAbABUABAAAAAAAAQAcABUABAAAAAAAAQAdABUABAAAAAAAAQAeABUABAAAAAAAAQAVABQABAAAAAAAAQAUABQABAAAAAAAAQAUABMABAAAAAAAAQAVABMABAAAAAAAAQAWABMABAAAAAAAAQAWABQABAAAAAAAAQATABQABAAAAAAAAQATABMABAAAAAAAAQA=")
+tile_map_data = PackedByteArray(0, 0, 13, 0, 13, 0, 4, 0, 0, 0, 0, 0, 1, 0, 16, 0, 7, 0, 4, 0, 0, 0, 0, 0, 1, 0, 13, 0, 17, 0, 4, 0, 0, 0, 0, 0, 1, 0)
+
+[node name="Door" parent="." unique_id=16439755 instance=ExtResource("7_y646j")]
+position = Vector2(879.99994, 549.99994)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=71253323]
+position = Vector2(575.8133, 323.19537)
