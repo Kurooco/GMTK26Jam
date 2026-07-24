@@ -48,4 +48,4 @@ func _unhandled_input(event: InputEvent) -> void:
 			moving = false
 	if(!moving):
 		pos_diff = get_local_mouse_position() - collision.position
-	collision.modulate = Color.RED if movable || moving else Color.WHITE
+	collision.modulate = Color.YELLOW if movable || moving else Color.WHITE

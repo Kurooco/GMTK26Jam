@@ -4,6 +4,8 @@ class_name Player
 var origin_position : Vector2
 var reset = false
 var colliding = false
+var stick = false
+var stick_position = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,8 +27,10 @@ func _process(delta: float) -> void:
 	$Sprite2D.rotation += delta*linear_velocity.x*.1
 	$CPUParticles2D.emitting = colliding && linear_velocity.length() > 50
 
+
 func _integrate_forces(state):
 	if(reset):
+		stick = false
 		var t = state.get_transform()
 		t.origin = origin_position
 		linear_velocity = Vector2.ZERO
@@ -34,8 +38,16 @@ func _integrate_forces(state):
 		$Sprite2D.rotation = 0
 		rotation = 0
 		state.set_transform(t)
+		show()
 		GameManager.player_reset.emit()
-		#reset = false
+	if(stick):
+		var t = state.get_transform()
+		t.origin = stick_position
+		linear_velocity = Vector2.ZERO
+		angular_velocity = 0
+		$Sprite2D.rotation = 0
+		rotation = 0
+		state.set_transform(t)
 
 
 func _on_body_entered(body: Node) -> void:
@@ -46,3 +58,7 @@ func _on_body_entered(body: Node) -> void:
 
 func _on_body_exited(body: Node) -> void:
 	colliding = false
+
+
+func disable(b:bool):
+	stick = b

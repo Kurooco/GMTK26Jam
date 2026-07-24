@@ -8,6 +8,7 @@
 script = ExtResource("1_n77po")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=277031263]
+modulate = Color(0.22045597, 0.024831168, 0.008136443, 1)
 z_index = -1
 texture_repeat = 2
 points = PackedVector2Array(88, -40)
