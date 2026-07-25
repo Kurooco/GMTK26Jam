@@ -1,5 +1,6 @@
 extends Node
 
+@export var opening_level : int
 @export var levels : Array[PackedScene]
 @export var music_transition_levels : Array[int]
 @onready var fade_screen: ColorRect = $CanvasLayer/Fade
@@ -19,7 +20,8 @@ var current_song = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.level_handler = self
-	set_level(0)
+	set_level(opening_level)
+	check_level_music(current_level_ind)
 
 func set_level(ind:int):
 	if(is_instance_valid(current_level)):
@@ -52,7 +54,7 @@ func fade(out:bool):
 
 
 func check_level_music(ind:int):
-	if(music_transition_levels[current_song] <= ind):
+	if(current_song < music_transition_levels.size() and music_transition_levels[current_song] <= ind):
 		current_song += 1
 		print_debug(current_song)
 		var pos = $Music.get_playback_position()

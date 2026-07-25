@@ -1,0 +1,158 @@
+[gd_scene format=4 uid="uid://dbaasrs6k36hd"]
+
+[ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/levels/level_template.tscn" id="1_mojuh"]
+[ext_resource type="PackedScene" uid="uid://c6svs40bbiwxy" path="res://scenes/rail_mover.tscn" id="2_24wxv"]
+[ext_resource type="PackedScene" uid="uid://h16ooyws06j0" path="res://scenes/cannon.tscn" id="3_qy8hv"]
+
+[sub_resource type="Curve2D" id="Curve2D_mojuh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 296, 192, 0, 0, 0, 0, 296, 448)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_24wxv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 424, 192, 0, 0, 0, 0, 424, 448)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_qy8hv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 552, 192, 0, 0, 0, 0, 552, 448)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_wyh5q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 680, 192, 0, 0, 0, 0, 680, 448)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_xthml"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 808, 192, 0, 0, 0, 0, 808, 448)
+}
+point_count = 2
+
+[node name="CanvasLayer" unique_id=1933097582 instance=ExtResource("1_mojuh")]
+
+[node name="CollisionPolygon2D" parent="LevelTemplate/StaticBody2D" parent_id_path=PackedInt32Array(1078983259) index="0" unique_id=1619036250]
+polygon = PackedVector2Array(32, 616, 808, 616, 808, 32, 32, 32, 32, 584, 64, 584, 64, 64, 776, 64, 776, 144.62624, 714, 175, 776, 175.08414, 776, 584, 688, 584, 64, 545, 64, 584, 32, 584)
+
+[node name="Player" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="1" unique_id=2089645925]
+position = Vector2(878.556, 102.73136)
+
+[node name="CollactableMap" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="2" unique_id=962208389]
+tile_map_data = PackedByteArray("AAAlAAoABAAAAAAAAQAlAA0ABAAAAAAAAQAYABAABAAAAAAAAQARABMABAAAAAAAAQAlABAABAAAAAAAAgAlABMABAAAAAAAAgAlABYABAAAAAAAAgAfAAoABAAAAAAAAgAYAA0ABAAAAAAAAgARAAoABAAAAAAAAgARAA0ABAAAAAAAAwARABAABAAAAAAAAwAYABMABAAAAAAAAwAYAAoABAAAAAAAAwAfAA0ABAAAAAAAAwAfABAABAAAAAAAAwAfABMABAAAAAAAAwAfABYABAAAAAAAAwAYABYABAAAAAAAAwARABYABAAAAAAAAgA=")
+
+[node name="Path2D" type="Path2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="4" unique_id=1767958384]
+curve = SubResource("Curve2D_mojuh")
+
+[node name="Path2D2" type="Path2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="5" unique_id=1821841084]
+curve = SubResource("Curve2D_24wxv")
+
+[node name="Path2D3" type="Path2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="6" unique_id=190748221]
+curve = SubResource("Curve2D_qy8hv")
+
+[node name="Path2D4" type="Path2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="7" unique_id=924976824]
+curve = SubResource("Curve2D_wyh5q")
+
+[node name="Path2D5" type="Path2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="8" unique_id=252602226]
+curve = SubResource("Curve2D_xthml")
+
+[node name="RailMover" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="9" unique_id=748919504 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelTemplate/RailMover" index="4" unique_id=1507559108]
+position = Vector2(807, 428)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTemplate/RailMover/StaticBody2D" index="0" unique_id=2025759776]
+polygon = PackedVector2Array(-55, 4, 32, -48, 48, -24)
+
+[node name="RailMover5" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="10" unique_id=1099667911 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelTemplate/RailMover5" index="4" unique_id=619500342]
+position = Vector2(552.2727, 242)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTemplate/RailMover5/StaticBody2D" index="0" unique_id=1489976181]
+polygon = PackedVector2Array(-40.272705, -34, 47.727295, 14, 47.727295, 30, -40.272705, -18)
+
+[node name="RailMover7" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="11" unique_id=1302150929 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelTemplate/RailMover7" index="4" unique_id=1835812567]
+position = Vector2(295.78662, 235.88431)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTemplate/RailMover7/StaticBody2D" index="0" unique_id=1930576003]
+polygon = PackedVector2Array(7.727295, -58, 7.727295, 30, -8.272705, 30, -8.272705, -58)
+
+[node name="RailMover9" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="12" unique_id=606284455 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelTemplate/RailMover9" index="4" unique_id=1167267163]
+position = Vector2(807, 352)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTemplate/RailMover9/StaticBody2D" index="0" unique_id=853965020]
+polygon = PackedVector2Array(7.727295, -58, 7.727295, 30, -8.272705, 30, -8.272705, -58)
+
+[node name="RailMover11" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="13" unique_id=970703760 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelTemplate/RailMover11" index="4" unique_id=2027722274]
+position = Vector2(424.21487, 280.08264)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTemplate/RailMover11/StaticBody2D" index="0" unique_id=1396408167]
+polygon = PackedVector2Array(-0.21487427, -8.082642, 79.785126, 47.91736, 55.785126, 47.91736, -24.214874, -8.082642)
+
+[node name="RailMover2" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="14" unique_id=618196642 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D3")
+
+[node name="Cannon" parent="LevelTemplate/RailMover2" index="4" unique_id=1188993007 instance=ExtResource("3_qy8hv")]
+position = Vector2(551.7273, 401.7273)
+
+[node name="RailMover3" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="15" unique_id=2066940872 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D4")
+
+[node name="Cannon" parent="LevelTemplate/RailMover3" index="4" unique_id=1341569141 instance=ExtResource("3_qy8hv")]
+position = Vector2(677.00006, 418.00006)
+rotation = -2.4149933
+
+[node name="RailMover4" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="16" unique_id=28102968 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D5")
+
+[node name="Cannon" parent="LevelTemplate/RailMover4" index="4" unique_id=271701930 instance=ExtResource("3_qy8hv")]
+position = Vector2(810.17633, 255.3092)
+rotation = 3.0765145
+
+[node name="RailMover6" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="17" unique_id=1587048680 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D2")
+
+[node name="Cannon" parent="LevelTemplate/RailMover6" index="4" unique_id=1445281309 instance=ExtResource("3_qy8hv")]
+position = Vector2(424, 204)
+rotation = -2.2060962
+
+[node name="RailMover8" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="18" unique_id=1005528193 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D")
+
+[node name="Cannon" parent="LevelTemplate/RailMover8" index="4" unique_id=707606485 instance=ExtResource("3_qy8hv")]
+position = Vector2(297.1568, 292.82288)
+rotation = 2.7701714
+
+[node name="RailMover10" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="19" unique_id=1400418457 node_paths=PackedStringArray("rail") instance=ExtResource("2_24wxv")]
+rail = NodePath("../Path2D4")
+
+[node name="Cannon" parent="LevelTemplate/RailMover10" index="4" unique_id=1340476823 instance=ExtResource("3_qy8hv")]
+position = Vector2(679.00006, 303)
+rotation = 0.50603586
+
+[node name="Cannon" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="20" unique_id=1623263317 instance=ExtResource("3_qy8hv")]
+position = Vector2(663.0826, 560.6859)
+rotation = -0.8648968
+
+[node name="CountTracker" parent="." index="1" unique_id=1943048595]
+counts = Dictionary[int, int]({
+0: 7,
+1: 2,
+2: 3
+})

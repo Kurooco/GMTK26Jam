@@ -17,7 +17,7 @@ func _ready() -> void:
 func update_list():
 	item_list.clear()
 	for veg in counts.keys():
-		var display = str(counts[veg]) if counts[veg] >= 0 else "X"
+		var display = "x"+str(counts[veg]) if counts[veg] >= 0 else "X"
 		item_list.add_item(display, Collectable.sprites[veg], false)
 
 func subtract(type:int) -> void:
@@ -26,7 +26,7 @@ func subtract(type:int) -> void:
 	if(check_satisfaction()):
 		is_satisfied = true
 		satisfied.emit()
-	elif(is_satisfied):
+	elif(is_satisfied || counts[type] == -1):
 		dissatisfied.emit()
 	update_list()
 

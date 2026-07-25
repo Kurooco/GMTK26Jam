@@ -3,12 +3,14 @@ class_name Collectable
 
 enum VegType {
 	CARROT = 0,
-	TURNIP = 1
+	TURNIP = 1,
+	BROCCOLI = 2
 }
 
 static var sprites = [
 	preload("res://art/carrot.png"),
-	preload("res://art/turnip.png")
+	preload("res://art/turnip.png"),
+	preload("res://art/broccoli.png")
 ]
 
 @export var type : VegType

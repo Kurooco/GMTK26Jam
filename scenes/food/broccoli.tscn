@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dyq34dwajfhui"]
+
+[ext_resource type="PackedScene" uid="uid://nbkjfibtqev2" path="res://scenes/collectable.tscn" id="1_tgc3g"]
+[ext_resource type="Texture2D" uid="uid://cl6t26gfeo0a" path="res://art/broccoli.png" id="2_1x27f"]
+
+[node name="Collectable" unique_id=1206059110 instance=ExtResource("1_tgc3g")]
+type = 2
+
+[node name="Sprite2D" parent="." index="1" unique_id=389462543]
+texture = ExtResource("2_1x27f")

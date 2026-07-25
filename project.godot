@@ -15,6 +15,10 @@ run/main_scene="uid://hyi2h3qn768p"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://art/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://bspb4ndyo54pm"
+
 [autoload]
 
 GameManager="*uid://ccf3ykai326a5"
@@ -23,10 +27,15 @@ GameManager="*uid://ccf3ykai326a5"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://dp1ntf0aewgmk"
 
 [global_group]
 
 count_tracker=""
+
+[gui]
+
+theme/custom_font="uid://cnamik5mik33y"
 
 [input]
 

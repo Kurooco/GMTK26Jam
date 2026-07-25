@@ -25,6 +25,7 @@ func _ready() -> void:
 	
 	# Create rail line
 	if(!has_line(rail)):
+		print_debug("line!")
 		$Line2D.points = rail.curve.get_baked_points()
 	$Line2D.global_position = rail.global_position
 	

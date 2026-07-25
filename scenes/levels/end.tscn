@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dwtny2xqpqkmd"]
+
+[ext_resource type="Texture2D" uid="uid://b078rfjqj656p" path="res://art/chef2.png" id="1_5bcbc"]
+
+[node name="Control" type="Control" unique_id=984497691]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1492935023]
+layout_mode = 0
+offset_left = -162.0
+offset_top = -131.0
+offset_right = 1380.0
+offset_bottom = 879.0
+color = Color(0.051511735, 0.05151178, 0.05628621, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=388728837]
+position = Vector2(884.00006, 539)
+scale = Vector2(1.5758333, 1.5758333)
+texture = ExtResource("1_5bcbc")
+
+[node name="Label" type="Label" parent="." unique_id=1878486230]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 215.0
+offset_right = 755.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 20
+text = "You are a true chef, my friend! From this day forward, you are free to use my kitchen whenever you like!"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="." unique_id=1968668202]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 74.0
+offset_right = 322.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 50
+text = "THE END"
