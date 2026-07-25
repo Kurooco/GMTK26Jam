@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body is Player):
+		$AudioStreamPlayer.play()
 		get_tree().get_first_node_in_group("count_tracker").subtract(type)
 		hide()
 		collision_shape.set_deferred("disabled", true)

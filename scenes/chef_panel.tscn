@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://csbk438n0h8yj" path="res://scenes/chef_panel.gd" id="2_wt53e"]
 [ext_resource type="Texture2D" uid="uid://b078rfjqj656p" path="res://art/chef2.png" id="4_8lkvb"]
 [ext_resource type="Texture2D" uid="uid://bi43l6phpcnib" path="res://art/chef3.png" id="5_p5kou"]
+[ext_resource type="AudioStream" uid="uid://ck4i7rndyn8da" path="res://sounds/sfx/Yes2.wav" id="6_8lkvb"]
+[ext_resource type="AudioStream" uid="uid://ugng34ndctkv" path="res://sounds/sfx/No.wav" id="7_p5kou"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pbbe2"]
 animations = [{
@@ -34,3 +36,13 @@ position = Vector2(119.99988, 111.99994)
 scale = Vector2(0.42, 0.42)
 sprite_frames = SubResource("SpriteFrames_pbbe2")
 frame_progress = 0.5106615
+
+[node name="Yes" type="AudioStreamPlayer" parent="." unique_id=437001192]
+stream = ExtResource("6_8lkvb")
+volume_db = 10.628
+pitch_scale = 0.8
+
+[node name="No" type="AudioStreamPlayer" parent="." unique_id=929029760]
+stream = ExtResource("7_p5kou")
+volume_db = 16.7
+pitch_scale = 0.83

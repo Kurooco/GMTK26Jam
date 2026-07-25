@@ -14,3 +14,9 @@ func _process(delta: float) -> void:
 	
 func set_expression(frame:int):
 	$Sprite2D.frame = frame
+	print_debug(frame)
+	if(frame == 1):
+		$Yes.play()
+	if(frame == 2):
+		$Yes.stop()
+		$No.play()

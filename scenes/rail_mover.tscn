@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bonav1lsig7aa" path="res://scripts/block.gd" id="1_n77po"]
 [ext_resource type="Texture2D" uid="uid://dk63fa654upde" path="res://art/icon.svg" id="2_83scx"]
 [ext_resource type="Texture2D" uid="uid://bikq5cqrnd0js" path="res://art/rail.png" id="2_nuqv1"]
+[ext_resource type="AudioStream" uid="uid://bp5jfgq4n4ugw" path="res://sounds/sfx/Move.wav" id="4_ttnm2"]
 
 [node name="RailMover" type="Node2D" unique_id=748919504]
 script = ExtResource("1_n77po")
@@ -25,3 +26,7 @@ visible = false
 modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("2_83scx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=850019016]
+stream = ExtResource("4_ttnm2")
+volume_db = 15.182

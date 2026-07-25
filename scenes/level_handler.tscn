@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c52bscg422umv" path="res://scenes/levels/level5.tscn" id="2_2r54h"]
 [ext_resource type="PackedScene" uid="uid://c7j7fmwmrdhak" path="res://scenes/levels/level3.tscn" id="2_4njay"]
 [ext_resource type="PackedScene" uid="uid://cnbao8n7bu3eh" path="res://scenes/levels/level2.tscn" id="2_c7bce"]
+[ext_resource type="PackedScene" uid="uid://wi3pujaqhu42" path="res://scenes/levels/level7.tscn" id="2_eay6x"]
+[ext_resource type="PackedScene" uid="uid://c4p86telnk347" path="res://scenes/levels/level6.tscn" id="2_jxtpv"]
 [ext_resource type="PackedScene" uid="uid://c8vmqwoxedmls" path="res://scenes/levels/level1.tscn" id="2_lsvq1"]
 [ext_resource type="PackedScene" uid="uid://uxpil87kx2vv" path="res://scenes/levels/level4.tscn" id="2_ylg7y"]
 [ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/levels/level_template.tscn" id="3_lsvq1"]
@@ -11,8 +13,8 @@
 
 [node name="LevelHandler" type="Node" unique_id=1839362579]
 script = ExtResource("1_lqfj4")
-levels = Array[PackedScene]([ExtResource("2_2r54h"), ExtResource("2_ylg7y"), ExtResource("2_4njay"), ExtResource("2_c7bce"), ExtResource("2_lsvq1"), ExtResource("3_lsvq1")])
-music_transition_levels = Array[int]([1, 2, 3, 4])
+levels = Array[PackedScene]([ExtResource("2_ylg7y"), ExtResource("2_eay6x"), ExtResource("2_jxtpv"), ExtResource("2_2r54h"), ExtResource("2_4njay"), ExtResource("2_c7bce"), ExtResource("2_lsvq1"), ExtResource("3_lsvq1")])
+music_transition_levels = Array[int]([2, 4, 6, 8])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=240334699]
 layer = 2
@@ -28,5 +30,6 @@ color = Color(0, 0, 0, 1)
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1310369221]
 stream = ExtResource("6_phxu2")
 autoplay = true
+bus = &"Music"
 
 [connection signal="finished" from="Music" to="." method="_on_audio_stream_player_finished"]

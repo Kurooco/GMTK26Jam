@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 		line_2d.add_point(global_position)
 	modulate = Color.BLUE if GameManager.current_mode == 0 else Color.WHITE
 	if(Input.is_action_just_pressed("switch_modes")):
+		$PlaySound.play()
 		GameManager.current_mode = (GameManager.current_mode + 1) % 2
 		if(GameManager.current_mode == 0):
 			gravity_scale = 0
@@ -63,6 +64,7 @@ func _integrate_forces(state):
 func _on_body_entered(body: Node) -> void:
 	if(linear_velocity.y < -200):
 		$BigHit.emitting = true
+		$Thud.play()
 	colliding = true
 
 

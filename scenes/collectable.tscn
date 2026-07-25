@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c16xsit2btb7b" path="res://scripts/collectable.gd" id="1_3dk6v"]
 [ext_resource type="Texture2D" uid="uid://cvqga4jyuf0ko" path="res://art/carrot.png" id="2_un20x"]
+[ext_resource type="AudioStream" uid="uid://chyfttbp2qocb" path="res://sounds/sfx/twohit2.wav" id="3_dnya4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dk6v"]
 
@@ -18,5 +19,9 @@ shape = SubResource("RectangleShape2D_3dk6v")
 position = Vector2(4.7683716e-07, -4.7683716e-07)
 scale = Vector2(0.11000003, 0.11000003)
 texture = ExtResource("2_un20x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=312023570]
+stream = ExtResource("3_dnya4")
+volume_db = 9.109
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

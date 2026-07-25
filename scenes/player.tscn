@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bvmpacibybbsb" path="res://art/player1.png" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://crke0qv6c77qa" path="res://art/player2.png" id="3_hqtel"]
 [ext_resource type="Texture2D" uid="uid://b4gif6qu7xki2" path="res://art/dash.png" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://c1yhbu4v20kta" path="res://sounds/sfx/Lighthitwood.wav" id="5_qlg0r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1c2mv"]
 friction = 0.0
@@ -83,6 +84,15 @@ modulate = Color(0, 0, 0, 1)
 texture_repeat = 2
 texture = ExtResource("4_dqkch")
 texture_mode = 1
+
+[node name="PlaySound" type="AudioStreamPlayer" parent="." unique_id=724446181]
+stream = ExtResource("5_qlg0r")
+volume_db = 13.664
+
+[node name="Thud" type="AudioStreamPlayer" parent="." unique_id=1445026721]
+stream = ExtResource("5_qlg0r")
+volume_db = 15.182
+pitch_scale = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

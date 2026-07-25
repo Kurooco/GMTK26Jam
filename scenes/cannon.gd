@@ -16,10 +16,12 @@ func _on_timer_timeout() -> void:
 	player.apply_impulse(Vector2.from_angle(rotation)*force)
 	player.show()
 	shoot_particles.emitting = true
+	$Shoot.play()
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if(body is Player):
+		$Enter.play()
 		player = body
 		body.stick_position = global_position
 		body.disable(true)

@@ -33,6 +33,13 @@ func _ready() -> void:
 func enable_movement(b:bool) -> void:
 	movable = b
 
+func _process(delta: float) -> void:
+	if(moving):
+		if(!$AudioStreamPlayer.playing):
+			$AudioStreamPlayer.play()
+	else:
+		$AudioStreamPlayer.stop()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _unhandled_input(event: InputEvent) -> void:
 	if(GameManager.current_mode == GameManager.PlayMode.ROLLING):

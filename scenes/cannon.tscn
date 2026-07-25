@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bcmdn8wx8lfoe" path="res://art/cannon2.png" id="3_jfr8q"]
 [ext_resource type="Texture2D" uid="uid://cxogxpl31iq6b" path="res://art/blocks.png" id="3_yjxeu"]
 [ext_resource type="Texture2D" uid="uid://b4gif6qu7xki2" path="res://art/dash.png" id="4_jfr8q"]
+[ext_resource type="AudioStream" uid="uid://cs4u0a82vl53v" path="res://sounds/sfx/Hardhit.wav" id="5_0285d"]
+[ext_resource type="AudioStream" uid="uid://c1yhbu4v20kta" path="res://sounds/sfx/Lighthitwood.wav" id="6_22shy"]
 
 [sub_resource type="Gradient" id="Gradient_pbbe2"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -55,6 +57,16 @@ color_ramp = SubResource("Gradient_pxhkx")
 
 [node name="Timer" type="Timer" parent="." unique_id=1798076153]
 one_shot = true
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="." unique_id=444863341]
+stream = ExtResource("5_0285d")
+volume_db = 10.628
+pitch_scale = 0.5
+
+[node name="Enter" type="AudioStreamPlayer2D" parent="." unique_id=1626910615]
+stream = ExtResource("6_22shy")
+volume_db = 18.219
+pitch_scale = 0.3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

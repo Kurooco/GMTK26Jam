@@ -20,6 +20,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
+theme_override_colors/guide_color = Color(0.69803923, 0.69803923, 0.69803923, 0)
 theme_override_styles/panel = ExtResource("2_4wkds")
 theme_override_styles/hovered = ExtResource("2_4jvbi")
 allow_search = false

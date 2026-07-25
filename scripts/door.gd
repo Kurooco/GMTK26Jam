@@ -7,7 +7,7 @@ var t : Tween
 func _ready() -> void:
 	get_tree().get_first_node_in_group("count_tracker").satisfied.connect(open)
 	get_tree().get_first_node_in_group("count_tracker").dissatisfied.connect(close)
-
+	GameManager.player_reset.connect(close)
 
 func open():
 	frame = 1

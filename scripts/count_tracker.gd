@@ -34,7 +34,6 @@ func reset():
 	counts = count_copy.duplicate()
 	if(is_satisfied):
 		is_satisfied = false
-		dissatisfied.emit()
 	update_list()
 
 func check_satisfaction():
