@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://h16ooyws06j0"]
 
 [ext_resource type="Script" uid="uid://dj4438ok16w5m" path="res://scenes/cannon.gd" id="1_pxhkx"]
-[ext_resource type="Texture2D" uid="uid://c011jndvuxtqs" path="res://art/cannon.png" id="1_xuqfy"]
+[ext_resource type="Texture2D" uid="uid://bcmdn8wx8lfoe" path="res://art/cannon2.png" id="3_jfr8q"]
 [ext_resource type="Texture2D" uid="uid://cxogxpl31iq6b" path="res://art/blocks.png" id="3_yjxeu"]
 [ext_resource type="Texture2D" uid="uid://b4gif6qu7xki2" path="res://art/dash.png" id="4_jfr8q"]
 
@@ -29,10 +29,10 @@ position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_pbbe2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=98814977]
-position = Vector2(1.0000076, -2.0000076)
+position = Vector2(0.42984056, -2.5830278)
 rotation = 1.581942
-scale = Vector2(0.26500002, 0.26500002)
-texture = ExtResource("1_xuqfy")
+scale = Vector2(0.4174839, 0.4174839)
+texture = ExtResource("3_jfr8q")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite2D" unique_id=502898198]
 z_index = 5

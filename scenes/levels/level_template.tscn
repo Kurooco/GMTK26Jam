@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c6sd4epdt4ml2" path="res://scenes/count_tracker.tscn" id="4_smkg2"]
 [ext_resource type="Shader" uid="uid://40hgqw5ma5s0" path="res://resources/blocks.gdshader" id="6_0eplr"]
 [ext_resource type="Texture2D" uid="uid://cxogxpl31iq6b" path="res://art/blocks.png" id="7_gll4f"]
+[ext_resource type="PackedScene" uid="uid://msmp7edplclw" path="res://scenes/chef_panel.tscn" id="8_j81xe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pbbe2"]
 shader = ExtResource("6_0eplr")
@@ -33,7 +34,7 @@ z_index = -1
 position = Vector2(879.99994, 549.99994)
 
 [node name="CountTracker" parent="." unique_id=1943048595 instance=ExtResource("4_smkg2")]
-position = Vector2(900.3978, 58.139374)
+position = Vector2(948.3978, 58.139374)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1524114697]
 position = Vector2(572.8133, 323.19537)
@@ -69,3 +70,9 @@ offset_right = 834.0
 offset_bottom = 600.0
 mouse_filter = 2
 color = Color(0.4121936, 0.058721334, 0, 1)
+
+[node name="ChefPanel" parent="." unique_id=985866176 instance=ExtResource("8_j81xe")]
+offset_left = 880.4027
+offset_top = 430.2199
+offset_right = 1120.4027
+offset_bottom = 590.2199

@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/levels/level_template.tscn" id="1_nos0u"]
 [ext_resource type="PackedScene" uid="uid://c6svs40bbiwxy" path="res://scenes/rail_mover.tscn" id="2_71baw"]
-[ext_resource type="PackedScene" uid="uid://h16ooyws06j0" path="res://scenes/cannon.tscn" id="3_71baw"]
 
 [sub_resource type="Curve2D" id="Curve2D_2k3dv"]
 _data = {
@@ -84,14 +83,6 @@ curve = SubResource("Curve2D_nos0u")
 
 [node name="Path2D3" type="Path2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="10" unique_id=1342342333]
 curve = SubResource("Curve2D_71baw")
-
-[node name="Cannon" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="11" unique_id=737200570 instance=ExtResource("3_71baw")]
-position = Vector2(552.50275, 421.82025)
-rotation = 3.4183388
-
-[node name="Cannon2" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="12" unique_id=1188993007 instance=ExtResource("3_71baw")]
-position = Vector2(469.3219, 439.32642)
-rotation = 5.19919
 
 [node name="CountTracker" parent="." index="1" unique_id=1943048595]
 counts = Dictionary[int, int]({

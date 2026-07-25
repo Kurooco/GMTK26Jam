@@ -1,19 +1,14 @@
 [gd_scene format=3 uid="uid://c6sd4epdt4ml2"]
 
 [ext_resource type="Script" uid="uid://dvpwq566m5a62" path="res://scripts/count_tracker.gd" id="1_hb18e"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_626v6"]
-bg_color = Color(0, 0, 0, 0.43529412)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[ext_resource type="StyleBox" uid="uid://budqs6vxceyxm" path="res://resources/blank.tres" id="2_4jvbi"]
+[ext_resource type="StyleBox" uid="uid://5h7m4e5qq4gb" path="res://resources/smooth_box.tres" id="2_4wkds"]
 
 [node name="CountTracker" type="Node2D" unique_id=1943048595 groups=["count_tracker"]]
 script = ExtResource("1_hb18e")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=598475412]
-offset_right = 198.0
+offset_right = 104.0
 offset_bottom = 337.0
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1094718963]
@@ -25,7 +20,8 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_626v6")
+theme_override_styles/panel = ExtResource("2_4wkds")
+theme_override_styles/hovered = ExtResource("2_4jvbi")
 allow_search = false
 auto_height = true
 fixed_icon_size = Vector2i(50, 50)
