@@ -34,9 +34,7 @@ func make_line():
 	$Line2D.global_rotation = 0
 	var curr = Vector2.ZERO
 	var vel = Vector2.from_angle(rotation)*force
-	print_debug(vel)
 	for i in range(800):
 		$Line2D.add_point(curr)
 		curr += vel*.001
 		vel.y += ProjectSettings.get_setting("physics/2d/default_gravity")*.001
-		print_debug("vel "+str(vel)+" curr "+str(curr))
