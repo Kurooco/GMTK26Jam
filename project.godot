@@ -21,7 +21,7 @@ GameManager="*uid://ccf3ykai326a5"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [global_group]
