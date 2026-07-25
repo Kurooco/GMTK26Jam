@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://hyi2h3qn768p"]
 
 [ext_resource type="Script" uid="uid://b3hhjomlhmxdq" path="res://scripts/level_handler.gd" id="1_lqfj4"]
+[ext_resource type="PackedScene" uid="uid://c52bscg422umv" path="res://scenes/levels/level5.tscn" id="2_2r54h"]
 [ext_resource type="PackedScene" uid="uid://c7j7fmwmrdhak" path="res://scenes/levels/level3.tscn" id="2_4njay"]
 [ext_resource type="PackedScene" uid="uid://cnbao8n7bu3eh" path="res://scenes/levels/level2.tscn" id="2_c7bce"]
 [ext_resource type="PackedScene" uid="uid://c8vmqwoxedmls" path="res://scenes/levels/level1.tscn" id="2_lsvq1"]
+[ext_resource type="PackedScene" uid="uid://uxpil87kx2vv" path="res://scenes/levels/level4.tscn" id="2_ylg7y"]
 [ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/levels/level_template.tscn" id="3_lsvq1"]
 [ext_resource type="AudioStream" uid="uid://bg1fxjxq50rm6" path="res://sounds/music/Only You Could Know - v1.wav" id="6_phxu2"]
 
 [node name="LevelHandler" type="Node" unique_id=1839362579]
 script = ExtResource("1_lqfj4")
-levels = Array[PackedScene]([ExtResource("2_c7bce"), ExtResource("2_4njay"), ExtResource("2_lsvq1"), ExtResource("3_lsvq1")])
+levels = Array[PackedScene]([ExtResource("2_2r54h"), ExtResource("2_ylg7y"), ExtResource("2_4njay"), ExtResource("2_c7bce"), ExtResource("2_lsvq1"), ExtResource("3_lsvq1")])
 music_transition_levels = Array[int]([1, 2, 3, 4])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=240334699]

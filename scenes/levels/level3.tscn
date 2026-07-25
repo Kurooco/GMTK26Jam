@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/levels/level_template.tscn" id="1_02w4s"]
 [ext_resource type="PackedScene" uid="uid://c6svs40bbiwxy" path="res://scenes/rail_mover.tscn" id="2_s1j21"]
+[ext_resource type="PackedScene" uid="uid://h16ooyws06j0" path="res://scenes/cannon.tscn" id="3_sru4k"]
 
 [sub_resource type="Curve2D" id="Curve2D_sru4k"]
 _data = {
@@ -24,7 +25,7 @@ point_count = 2
 [node name="CanvasLayer" unique_id=1933097582 instance=ExtResource("1_02w4s")]
 
 [node name="CollactableMap" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="2" unique_id=962208389]
-tile_map_data = PackedByteArray("AAAPAAoABAAAAAAAAgAXABEABAAAAAAAAgAaAAwABAAAAAAAAgAjABEABAAAAAAAAgAdAA8ABAAAAAAAAgARAA8ABAAAAAAAAgASABUABAAAAAAAAgAdABUABAAAAAAAAgAVAA0ABAAAAAAAAwAfABMABAAAAAAAAwAiAA4ABAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAAXABEABAAAAAAAAgAaAAwABAAAAAAAAgAjABEABAAAAAAAAgAdAA8ABAAAAAAAAgARAA8ABAAAAAAAAgASABUABAAAAAAAAgAdABUABAAAAAAAAgAVAA0ABAAAAAAAAwAiAA4ABAAAAAAAAwAfABUABAAAAAAAAwAfABMABAAAAAAAAgA=")
 
 [node name="Path2D" type="Path2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="4" unique_id=2105327679]
 curve = SubResource("Curve2D_sru4k")
@@ -64,7 +65,22 @@ position = Vector2(552.9933, 287.79562)
 position = Vector2(0, 16)
 polygon = PackedVector2Array(-20.583862, 8.539001, -20.583862, -31.460999, 19.416138, -103.461, 19.416138, 8.539001)
 
+[node name="RailMover4" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="10" unique_id=1363681860 node_paths=PackedStringArray("rail") instance=ExtResource("2_s1j21")]
+rail = NodePath("../Path2D3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelTemplate/RailMover4" index="3" unique_id=927278987]
+position = Vector2(671.79175, 209.74475)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTemplate/RailMover4/StaticBody2D" index="0" unique_id=1555035696]
+position = Vector2(0, 16)
+polygon = PackedVector2Array(-23.791748, 6.255249, -23.791748, -81.74475, 24.208252, -41.74475, 24.208252, 6.255249)
+
+[node name="Cannon" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="11" unique_id=1188993007 instance=ExtResource("3_sru4k")]
+position = Vector2(395.16, 375.21)
+rotation = -1.2479104
+
 [node name="CountTracker" parent="." index="1" unique_id=1943048595]
 counts = Dictionary[int, int]({
-0: 1
+0: 1,
+1: 2
 })

@@ -24,7 +24,8 @@ func _ready() -> void:
 	collision.mouse_exited.connect(enable_movement.bind(false))
 	
 	# Create rail line
-	$Line2D.points = rail.curve.get_baked_points()
+	if(!has_line(rail)):
+		$Line2D.points = rail.curve.get_baked_points()
 	$Line2D.global_position = rail.global_position
 	
 	collision.position = rail.position + rail.curve.get_closest_point(collision.position)
@@ -49,3 +50,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if(!moving):
 		pos_diff = get_local_mouse_position() - collision.position
 	collision.modulate = Color.YELLOW if movable || moving else Color.WHITE
+
+func has_line(node:Node):
+	for i in node.get_children():
+		if(i is Line2D):
+			return true
+	return false
