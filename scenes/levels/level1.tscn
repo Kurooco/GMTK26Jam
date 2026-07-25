@@ -2,12 +2,44 @@
 
 [ext_resource type="PackedScene" uid="uid://dtfq2i2bjgtvo" path="res://scenes/levels/level_template.tscn" id="1_jwv3a"]
 [ext_resource type="PackedScene" uid="uid://c6svs40bbiwxy" path="res://scenes/rail_mover.tscn" id="2_dopym"]
+[ext_resource type="Texture2D" uid="uid://du8voop6sd53q" path="res://art/space1.png" id="3_1seuy"]
+[ext_resource type="Texture2D" uid="uid://d2d485aw548ml" path="res://art/space2.png" id="4_2r1tl"]
+[ext_resource type="Texture2D" uid="uid://cdn2h21c2sed7" path="res://art/mouse1.png" id="5_8a7m2"]
+[ext_resource type="Texture2D" uid="uid://dmt6obta4qs76" path="res://art/mouse2.png" id="6_plydf"]
 
 [sub_resource type="Curve2D" id="Curve2D_ootpb"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 264, 175, 0, 0, 0, 0, 824, 541)
 }
 point_count = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbbe2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1seuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2r1tl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c50w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8a7m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_plydf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="CanvasLayer" unique_id=1933097582 instance=ExtResource("1_jwv3a")]
 
@@ -38,6 +70,35 @@ metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelTemplate/RailMover2/StaticBody2D" index="0" unique_id=549456224]
 polygon = PackedVector2Array(-75.77136, 1.7615051, 136, 32, -4, 103)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="6" unique_id=433421278]
+position = Vector2(452.1571, 95.18181)
+scale = Vector2(0.28695217, 0.28695217)
+sprite_frames = SubResource("SpriteFrames_pbbe2")
+autoplay = "default"
+frame_progress = 0.8488834
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="7" unique_id=82757489]
+position = Vector2(662.7658, 270.88947)
+scale = Vector2(0.28695217, 0.28695217)
+sprite_frames = SubResource("SpriteFrames_c50w4")
+autoplay = "default"
+frame_progress = 0.35105142
+
+[node name="Label" type="Label" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="8" unique_id=118707655]
+offset_left = 406.71783
+offset_top = 115.171074
+offset_right = 527.71783
+offset_bottom = 142.17108
+text = "Start / Stop"
+
+[node name="Label2" type="Label" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="9" unique_id=7801404]
+offset_left = 709.82135
+offset_top = 251.01978
+offset_right = 842.82135
+offset_bottom = 308.01978
+text = "Click and drag to
+move blocks"
 
 [node name="CountTracker" parent="." index="1" unique_id=1943048595]
 counts = Dictionary[int, int]({
