@@ -76,14 +76,14 @@ position = Vector2(452.1571, 95.18181)
 scale = Vector2(0.28695217, 0.28695217)
 sprite_frames = SubResource("SpriteFrames_pbbe2")
 autoplay = "default"
-frame_progress = 0.8488834
+frame_progress = 0.8329016
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="7" unique_id=82757489]
 position = Vector2(662.7658, 270.88947)
 scale = Vector2(0.28695217, 0.28695217)
 sprite_frames = SubResource("SpriteFrames_c50w4")
 autoplay = "default"
-frame_progress = 0.35105142
+frame_progress = 0.93836397
 
 [node name="Label" type="Label" parent="LevelTemplate" parent_id_path=PackedInt32Array(1106842954) index="8" unique_id=118707655]
 offset_left = 406.71783

@@ -2,10 +2,15 @@
 
 [ext_resource type="Shader" uid="uid://40hgqw5ma5s0" path="res://resources/blocks.gdshader" id="1_k3l6u"]
 [ext_resource type="Texture2D" uid="uid://cxogxpl31iq6b" path="res://art/blocks.png" id="2_tmk6g"]
+[ext_resource type="Texture2D" uid="uid://bvmpacibybbsb" path="res://art/player1.png" id="3_oosx4"]
+[ext_resource type="Texture2D" uid="uid://crke0qv6c77qa" path="res://art/player2.png" id="4_apwh8"]
+[ext_resource type="Texture2D" uid="uid://csq0vl0ch38fh" path="res://art/chef1.png" id="5_apwh8"]
 
 [sub_resource type="GDScript" id="GDScript_0pvvx"]
 script/source = "extends Control
 
+func _process(delta: float) -> void:
+	$AnimatedSprite2D.rotation = sin(Time.get_ticks_msec()/500.0)*.5
 
 func _on_button_pressed() -> void:
 	$Button.disabled = true
@@ -14,6 +19,20 @@ func _on_button_pressed() -> void:
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oosx4"]
 shader = ExtResource("1_k3l6u")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbbe2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oosx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_apwh8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.5
+}]
 
 [node name="Control" type="Control" unique_id=834365834]
 layout_mode = 3
@@ -32,11 +51,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -45.25714
-offset_top = 39.0
+offset_top = -25.0
 offset_right = 45.25714
-offset_bottom = 105.0
+offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 20
 text = "Start"
 flat = true
 
@@ -47,18 +67,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -147.0
-offset_right = 152.0
-offset_bottom = 19.0
+offset_left = -308.5
+offset_top = -269.0
+offset_right = 308.5
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/paragraph_spacing = -30
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 5
-theme_override_font_sizes/font_size = 100
-text = "TITLE"
+theme_override_font_sizes/font_size = 80
+text = "The Chef's
+Apprentice"
 horizontal_alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=676255787]
@@ -85,5 +108,17 @@ scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("2_tmk6g")
 stretch_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1236449829]
+position = Vector2(245.03554, 451.2038)
+scale = Vector2(0.5452011, 0.5452011)
+sprite_frames = SubResource("SpriteFrames_pbbe2")
+autoplay = "default"
+frame_progress = 0.535369
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=674007371]
+position = Vector2(993.9702, 583.43616)
+scale = Vector2(0.9299007, 0.9299007)
+texture = ExtResource("5_apwh8")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

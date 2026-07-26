@@ -16,7 +16,7 @@
 [node name="LevelHandler" type="Node" unique_id=1839362579]
 script = ExtResource("1_lqfj4")
 levels = Array[PackedScene]([ExtResource("2_11p3o"), ExtResource("2_lsvq1"), ExtResource("2_c7bce"), ExtResource("2_ylg7y"), ExtResource("2_2r54h"), ExtResource("2_4njay"), ExtResource("2_jxtpv"), ExtResource("2_eay6x"), ExtResource("2_o8rwv"), ExtResource("10_o8rwv")])
-music_transition_levels = Array[int]([2, 4, 6, 7])
+music_transition_levels = Array[int]([3, 5, 7, 8])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=240334699]
 layer = 2

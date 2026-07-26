@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 		GameManager.current_mode = (GameManager.current_mode + 1) % 2
 		if(GameManager.current_mode == 0):
 			gravity_scale = 0
+			GameManager.player_reset.emit()
 			reset = true
 		else:
 			line_2d.clear_points()
@@ -40,17 +41,17 @@ func _process(delta: float) -> void:
 
 func _integrate_forces(state):
 	if(reset):
+		print_debug("here")
 		drawing = false
 		stick = false
 		var t = state.get_transform()
 		t.origin = origin_position
 		linear_velocity = Vector2.ZERO
 		angular_velocity = 0
-		$Sprite2D.rotation = 0
+		$Sprite2D.rotation += .1
 		rotation = 0
 		state.set_transform(t)
 		show()
-		GameManager.player_reset.emit()
 	if(stick):
 		var t = state.get_transform()
 		t.origin = stick_position

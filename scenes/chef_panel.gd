@@ -8,13 +8,9 @@ func _ready() -> void:
 	get_tree().get_first_node_in_group("count_tracker").dissatisfied.connect(set_expression.bind(2))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func set_expression(frame:int):
 	$Sprite2D.frame = frame
-	print_debug(frame)
 	if(frame == 1):
 		$Yes.play()
 	if(frame == 2):
